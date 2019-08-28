@@ -1,0 +1,11 @@
+<mat-card *ngIf="ready" class="example-card">
+    <mat-card-content class='card-body'>
+        <div *ngIf="!renderDetails">
+            <current-weather [city]="params.city" [data]="currentWeather"> </current-weather>
+            <week-weather [forecastArray]="weather" (showDetails)="showDayDetails($event)"> </week-weather>
+        </div>
+        <div *ngIf="renderDetails">
+            <day-weather-details [city]="params.city" [data]="selectedDay" (disable)="disableDetailView()"> </day-weather-details>
+        </div>
+    </mat-card-content>
+</mat-card>

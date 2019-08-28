@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="space-around  center">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <img class="current-icon" [src]="utils.getIconLink(data.weather[0].icon)">
+        <span class="current-temp">{{data.main.temp | number:'2.0-0'}}</span>
+        <span class="current-temp-unit">°C</span>
+        <div fxLayout="column" fxLayoutAlign="space-evenly stretch">
+            <button class='cursor' class="current-location" [routerLink]="['/']" mat-button>
+                {{city}}
+                <mat-icon matSuffix>location_city</mat-icon>
+            </button>
+            <span class="current-day">{{utils.getCurrentDayName()}}</span>
+
+            <span class="current-weather">{{data.weather[0].description}}</span>
+        </div>
+    </div>
+
+    <div class="container-add" fxLayout="row" fxLayoutAlign="space-around start">
+        <span> Sunrise: {{utils.getTimeFromDate(data.sys.sunrise)}} </span>
+        <span> Sunset:  {{utils.getTimeFromDate(data.sys.sunset)}} </span>
+        <span> Humidity:  {{data.main.humidity}}%</span>
+        <span> Pressure:  {{data.main.pressure}} hPa</span>
+        <span> Wind: {{data.wind.speed}} km/h  </span>
+    </div>
+</div>

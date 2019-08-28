@@ -1,0 +1,24 @@
+.header {
+    text-align: center;
+    font-size: 1.75em;
+}
+
+.space {
+    width: 10px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+.margin {
+    margin-right: 10px;
+}
+
+h2{
+    font-family: Raleway
+}
+
+.example-card{
+    padding : 0px 25px
+}

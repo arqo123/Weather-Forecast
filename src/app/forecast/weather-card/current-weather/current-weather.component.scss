@@ -1,0 +1,40 @@
+.current-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current-temp {
+    font-size: 3.5em;
+}
+
+.current-temp-unit {
+    font-size: 1em;
+    margin-right: 0.5em;
+    margin-bottom: 1.3em
+}
+
+.current-location {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.current-day {
+    color: grey;
+    padding: 2px 16px;
+}
+
+.current-weather {
+    color: grey;
+    padding: 2px 16px;
+    text-transform: capitalize
+}
+
+.container-add {
+    color: grey;
+    padding: 5px 0 10px 0;
+    font-size: 0.75rem;
+}
+
+.container-add > span {
+    padding: 0 8px;
+}

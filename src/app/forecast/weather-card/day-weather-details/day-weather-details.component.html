@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="space-around  center">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <img class="current-icon" [src]="utils.getIconLink(data.weather[0].icon)">
+        <span class="current-temp">{{data.main.temp | number:'2.0-0'}}</span>
+        <span class="current-temp-unit">°C</span>
+        <div fxLayout="column" fxLayoutAlign="space-evenly stretch">
+            <button class='cursor' class="current-location" [routerLink]="['/']" mat-button>
+                {{city}}
+                <mat-icon matSuffix>location_city</mat-icon>
+            </button>
+            <span class="current-day">{{utils.getDayName(data.dt_txt)}}</span>
+
+            <span class="current-weather">{{data.weather[0].description}}</span>
+        </div>
+    </div>
+
+    <div class="container-add" fxLayout="row" fxLayoutAlign="space-around start">
+        <detailed-icon label='Humidity' unit='%' [data]='data.main.humidity' icon='humidity'> </detailed-icon>
+        <detailed-icon label='Pressure' unit=' hPa' [data]='data.main.pressure' icon='pressure'> </detailed-icon>
+        <detailed-icon label='Wind' unit=' km/h ' [data]='data.wind.speed' icon='wind'> </detailed-icon>
+
+    </div>
+    <div class="submit-btn" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card-actions>
+            <button (click)="emitDisableDetail()" mat-raised-button color="warn"> BACK </button>
+        </mat-card-actions>
+    </div>
+</div>

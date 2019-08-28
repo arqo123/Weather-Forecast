@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+    <div class="header" fxLayout="row" fxLayoutAlign="center center">
+        <h2 class='margin'> Weather Forecast </h2>
+        <img src='assets/weather-icon.png'>
+    </div>
+    <div>
+        <div class="card-body" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field>
+                <input [(ngModel)]="selectedCity" matInput placeholder="Insert City">
+            </mat-form-field>
+            <div class="space">
+                &nbsp;
+            </div>
+            <button class='cursor' (click)="setCurrentCity()" mat-stroked-button>
+                DETECT LOCATION
+                <mat-icon matSuffix>gps_fixed</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="submit-btn" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card-actions>
+            <button [disabled]="!selectedCity" (click)='navigateToWeather()' mat-raised-button color="primary">GET WEATHER</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

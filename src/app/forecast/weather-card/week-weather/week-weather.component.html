@@ -1,0 +1,14 @@
+<div class="week" fxLayout="row" fxLayoutAlign="space-between center">
+  <div *ngFor="let forecast of forecastArray ">
+      <button mat-button class='small-btn' (click)="emitShowDetail(forecast)">
+          <div fxLayout="column" fxLayoutAlign="space-around center">
+              <span class="day-name"> {{utils.getDayName(forecast.dt_txt)}} </span>
+              <img class="day-icon" [src]="utils.getIconLink(forecast.weather[0].icon)">
+              <div class='day-temp'>
+                  <span class="day-temp-max"> {{forecast.main.temp_max | number:'2.0-0'}}° </span>
+                  <span class="day-temp-min">{{forecast.main.temp_min | number:'2.0-0'}}°</span>
+              </div>
+          </div>
+      </button>
+  </div>
+</div>
